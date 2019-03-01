@@ -1,0 +1,171 @@
+#VRML V2.0 utf8
+DEF table-line Transform {
+	children [
+
+		DEF table Transform {
+			children [
+				#  table face
+				DEF table-face Transform {
+					translation	0 82.5 0
+					children [
+						Shape {
+							geometry Cylinder {
+								radius	80
+								height	5
+							}
+							appearance Appearance {
+								material Material {
+									ambientIntensity 0
+									diffuseColor .29 .29 .29
+									specularColor 1 .94 .54
+									emissiveColor .4 .4 .4
+									shininess .83
+									transparency .475
+								}
+							}
+						}
+					]
+				}
+	
+				#table front leg 
+				DEF leg-f Transform {
+					translation	0 40 70.71
+					children [
+						Shape {	
+							geometry Cylinder {
+							    radius	5
+								height	80
+							}
+							appearance Appearance {
+								material Material {
+									diffuseColor .5 .3 .19
+									specularColor .08 .08 .05
+									emissiveColor .12 .13 .08
+									ambientIntensity .0833
+									shininess .17
+								}
+							}
+
+						}
+					]
+				}
+
+				DEF leg-r Transform {
+					translation	70.71 40 0
+					children [
+						Shape {	
+							geometry Cylinder {
+							    radius	5
+								height	80
+							}
+							appearance Appearance {
+								material Material {
+									diffuseColor .5 .3 .19
+									specularColor .08 .08 .05
+									emissiveColor .12 .13 .08
+									ambientIntensity .0833
+									shininess .17
+								}
+							}
+
+						}
+					]
+				}	   
+
+				# table back leg
+				DEF leg-b Transform {
+					translation	0 40 -70.71
+					children [
+						Shape {
+							geometry Cylinder {
+							    radius	5
+								height	80
+							}
+							appearance Appearance {
+								material Material {
+									diffuseColor .5 .3 .19
+									specularColor .08 .08 .05
+									emissiveColor .12 .13 .08
+									ambientIntensity .0833
+									shininess .17
+								}
+							}
+						}
+					]
+				}
+				DEF leg-l Transform {
+					translation	-70.71 40 0
+					children [
+						Shape {
+							geometry Cylinder {
+							    radius	5
+								height	80
+							}
+							appearance Appearance {
+								material Material {
+									diffuseColor .5 .3 .19
+									specularColor .08 .08 .05
+									emissiveColor .12 .13 .08
+									ambientIntensity .0833
+									shininess .17
+								}
+							}
+						}
+					]
+				}
+
+				DEF support-l Transform {	
+					translation 0 75 0
+					rotation 1 0 0 1.571
+					children [
+						Shape {	geometry Cylinder {
+								radius 5
+								height 141
+							}
+							appearance Appearance {
+								material Material {
+									diffuseColor .57 .58 .58
+									specularColor .67 .46 .44
+									ambientIntensity .137
+									shininess .17
+								}
+							}
+
+
+
+						}
+					]
+				}
+
+				DEF support-r Transform {	
+					translation 0 75 0
+					rotation 0 0 1 1.571
+					children [
+						Shape {	geometry Cylinder {
+								radius 5
+								height 141
+							}
+							appearance Appearance {
+								material Material {
+									diffuseColor .57 .58 .58
+									specularColor .67 .46 .44
+									ambientIntensity .137
+									shininess .17
+								}
+							}
+
+
+
+						}
+					]
+				}
+			]
+		}
+
+	]
+}  
+Transform {
+	translation	0 0	 -100
+	rotation 0 1 0 0.785
+	children USE table-line
+}
