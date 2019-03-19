@@ -164,8 +164,3 @@ DEF table-line Transform {
 
 	]
 }  
-Transform {
-	translation	0 0	 -100
-	rotation 0 1 0 0.785
-	children USE table-line
-}
