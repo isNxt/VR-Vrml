@@ -1,0 +1,23 @@
+#VRML V2.0 utf8
+
+Shape {
+	appearance Appearance {
+		material Material {
+		}
+	}
+	geometry Text {
+		string [
+		"Hi" "I am Niu Xiaotong" "from Xiamen University"
+		]
+		fontStyle FontStyle	{
+		family	"SANS"
+		size 2
+		spacing	1
+		horizontal	TRUE
+		style "PLAIN"
+		justify	[
+		"BEGIN" "MIDDLE" "END"
+		]
+		}
+	}
+}

@@ -1,0 +1,186 @@
+#VRML V2.0 utf8
+
+DEF mydesk Group {
+
+	children [
+		Transform {			# ǰʽ 
+			translation	15 0 15
+			children [
+				Shape {
+    				appearance	DEF mat1 Appearance {
+    					material	Material {
+							diffuseColor .5 .3 .19
+							emissiveColor .12 .13 .08
+							ambientIntensity .0833
+							specularColor .08 .08 .05
+							shininess .17
+    					}
+    				}
+    				geometry Extrusion{
+						crossSection  [2 2,2 1,1 1,1 -1,2 -1,2 -2,-2 -2,-2 -1,-1 -1,-1 1,-2 1,-2 2,2 2] 
+						spine [0 0 0 , 0 40 0]
+						scale 1 1
+						
+					}
+				}
+  
+			]
+		}
+		Transform {
+			translation	-15 0 15
+			children [
+				Shape {
+    				appearance	USE	mat1
+    				geometry Extrusion{
+						crossSection  [2 2,2 1,1 1,1 -1,2 -1,2 -2,-2 -2,-2 -1,-1 -1,-1 1,-2 1,-2 2,2 2] 
+						spine [0 0 0 , 0 40 0]
+						scale 1 1
+						
+					}
+				}
+								 
+			]
+		}
+
+		Transform {
+			translation	-15 0 -15
+			children [
+				Shape {
+    				appearance	Appearance {
+    					material	Material {
+							diffuseColor .5 .3 .19
+							emissiveColor .12 .13 .08
+							ambientIntensity .0833
+							specularColor .08 .08 .05
+							shininess .17
+    					}
+    				}
+    				geometry Extrusion{
+						crossSection  [2 2,2 1,1 1,1 -1,2 -1,2 -2,-2 -2,-2 -1,-1 -1,-1 1,-2 1,-2 2,2 2] 
+						spine [0 0 0 , 0 85 0]
+						scale 1 1
+						
+					}
+				}
+			]
+		}
+
+		Transform {
+			translation	+15 0 -15
+			children [
+				Shape {
+    				appearance	Appearance {
+    					material	Material {
+							diffuseColor .5 .3 .19
+							emissiveColor .12 .13 .08
+							ambientIntensity .0833
+							specularColor .08 .08 .05
+							shininess .17
+    					}
+    				}
+    				geometry Extrusion{
+						crossSection  [2 2,2 1,1 1,1 -1,2 -1,2 -2,-2 -2,-2 -1,-1 -1,-1 1,-2 1,-2 2,2 2] 
+						spine [0 0 0 , 0 85 0]
+						scale 1 1
+						
+					}
+				}
+			]
+		}
+
+		Transform {
+			translation	0 42.5 0
+			children [
+				Shape {
+    				appearance	Appearance {
+    					material	Material {
+							diffuseColor 1 .9 .61
+							ambientIntensity 0
+							emissiveColor .2 .18 .12
+							shininess 0
+    					}
+    				}
+    				geometry	Box { size 40 5 40 }
+				}
+			]
+		}
+
+		# the curveface of desk
+		Transform {
+			translation -20,45,-20
+			children [
+				Shape {
+					geometry ElevationGrid {
+						xDimension 11
+						xSpacing 4
+						zDimension 11
+						zSpacing 4
+						height [
+							0,0,0,0,0,0,0,0,0,0,0,
+							0,2,2,2,2,2,2,2,2,2,0,
+							0,2,2,2,2,2,2,2,2,2,0,
+							0,2,2,1,1,1,1,1,2,2,0,
+							0,2,2,1,1,1,1,1,2,2,0,
+							0,2,2,1,1,1,1,1,2,2,0,
+							0,2,2,1,1,1,1,1,2,2,0,
+							0,2,2,0,0,1,0,0,2,2,0,
+							0,2,2,0,0,1,0,0,2,2,0,
+							0,2,2,0,0,1,0,0,2,2,0,
+							0,0,0,0,0,1,0,0,0,0,0,
+						]
+						creaseAngle	.5
+					}
+					appearance Appearance {
+						material Material {
+							diffuseColor 1 .9 .61
+							ambientIntensity 0
+							emissiveColor .2 .18 .12
+							shininess 0
+						}
+					}
+				}
+			]
+		}
+
+		Transform {
+			translation	0 88 -15
+			children [
+				Shape {
+    				appearance	Appearance {
+    					material	Material {
+							diffuseColor .75 .6 .46
+							ambientIntensity .153
+							shininess .17
+							specularColor .08 .08 .05
+    					}
+    				}
+    				geometry	Box { size 36 6 6 }
+				}
+  
+			]
+		}
+
+		Transform {
+			translation	0 65 -15
+			children [
+				Shape {
+    				appearance	Appearance {
+    					material	Material {
+							diffuseColor 1 .68 .35
+							ambientIntensity 0
+							shininess 0
+							emissiveColor .27 .18 .09
+    					}
+    				}
+    				geometry	Box { size 30 4 4 }
+				}
+			]
+		}
+	]
+}
+
+Transform {		
+	translation	100 0 0
+	children USE mydesk
+
+}
