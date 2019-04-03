@@ -1,0 +1,170 @@
+#VRML V2.0 utf8
+PROTO elec_fan [
+field SFVec3f position 0 0 0
+field SFVec3f shade_pos 0 0 0
+]
+{
+	Transform {
+	translation	IS position
+	children [
+		Transform {
+		translation	0 -10 0
+		children [
+			Shape {
+				appearance DEF fan_app Appearance {
+					material  Material {
+						diffuseColor .57 .58 .58
+						specularColor .67 .46 .44
+						ambientIntensity .137
+						shininess .17
+					}
+				}
+				geometry Cylinder {
+				radius 30
+			    height 20}
+			}
+		]
+		}
+		Transform {
+		translation	0 -260 0
+		children [
+			Shape {
+			appearance USE fan_app
+			geometry Cylinder {
+			radius 10
+			height 480
+			}
+			}
+		]
+		}
+	 Transform {
+		translation	0 -515 0
+		children [
+			Shape {
+				appearance Appearance {
+				material  Material {
+						diffuseColor .57 .58 .58
+						specularColor .67 .46 .44
+						ambientIntensity .137
+						shininess .17
+					}
+			    	texture	ImageTexture {
+					url	"maps\fanCenter.png"
+					}
+				}
+			geometry Cylinder {
+			radius 90
+			height 30
+			}
+			}
+		]
+		}
+		DEF leaf Transform {
+		translation	0 -515 0
+#		rotation 1 0 0 0.269
+		children [
+			Shape {
+			appearance USE fan_app
+			geometry IndexedFaceSet	{
+				coord Coordinate {
+					point [
+					85 0 30
+					120 0 30
+					120 0 -30
+					85 0 -30
+					]
+				}
+				coordIndex [0 1 2 3]
+				solid FALSE
+			}
+			}
+			Shape {
+			appearance USE fan_app
+			geometry IndexedFaceSet	{
+				coord Coordinate {
+					point [
+					120 0 70
+					700 0 55
+					700  0 -55
+					120 0 -70
+					]
+				}
+				coordIndex [0 1 2 3]
+				solid FALSE
+			}
+			}
+		]	
+	}
+	Transform {
+	rotation 0 1 0 2.09
+	children USE leaf
+	}
+	Transform {
+	rotation 0 1 0 -2.09
+	children USE leaf
+	}
+	]
+	}
+	Transform{
+	translation IS shade_pos
+	children [
+		DEF shade_leaf Transform {
+			children [
+			Shape {
+				appearance DEF shade_app Appearance	{
+					material Material {
+						transparency .169
+						diffuseColor .624 .631 .624
+					}
+				}
+			geometry IndexedFaceSet	{
+				coord Coordinate {
+					point [
+					85 0 30
+					120 0 30
+					120 0 -30
+					85 0 -30
+					]
+				}
+				coordIndex [0 1 2 3]
+				solid FALSE
+			}
+			}
+			Shape {
+			appearance USE shade_app
+			geometry IndexedFaceSet	{
+				coord Coordinate {
+					point [
+					120 0 70
+					700 0 55
+					700  0 -55
+					120 0 -70
+					]
+				}
+				coordIndex [0 1 2 3]
+				solid FALSE
+			}
+			}
+		]
+		}
+	Transform {
+	rotation 0 1 0 2.09
+	children USE shade_leaf
+	}
+	Transform {
+	rotation 0 1 0 -2.09
+	children USE shade_leaf
+	}
+	Shape {
+	appearance USE shade_app
+	geometry Cylinder {
+	radius 90
+	height 2
+	}
+	}
+]
+}
+}
+elec_fan {
+shade_pos 0 -3000 0
+}

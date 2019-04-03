@@ -1,0 +1,513 @@
+#VRML V2.0 utf8
+
+Viewpoint {position 0 300 10000}
+
+Background	 { 
+	skyAngle [1.52, 1.56, 1.57 ]  
+    skyColor
+	[ 
+        .275 .353 .608,
+	    .529 .627 .784, 
+		.451 .529 .725, 
+		.451 .529 .725
+    ]   
+    groundAngle[1.1, 1.4, 1.57 ]   
+    groundColor
+	[            
+       .725 .529 .412, 
+	   .725 .529 .412, 
+	   .392 .471 .647, 
+	   .137 .137 .216 
+    ]
+	frontUrl    "maps\background-out.jpg"
+    backUrl 	"maps\background-out.jpg"
+	leftUrl		"maps\background-out.jpg"
+	rightUrl	"maps\background-out.jpg"
+}
+#
+Transform {
+	translation	0 -190 0
+	children [
+		Shape {
+			appearance  Appearance {
+				texture ImageTexture {url ["maps\grass-01.jpg"]}
+				textureTransform TextureTransform 
+				{
+					scale  40 40 
+				}
+			}
+			geometry Box {size 150000 100 150000}
+		}
+	]
+
+
+}
+#ذ
+Transform{
+	translation	 0 -50 0
+	children [
+		Shape {
+			appearance Appearance {
+				texture ImageTexture	{url ["maps\inner-floor.jpg"]}
+				textureTransform TextureTransform 
+				{
+					scale  10 10 
+				}
+			}
+
+			geometry Box {size 10000 100 10000 }
+		}
+
+	]
+}
+DEF langan Transform {
+	translation	-4990 400 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {}
+				texture ImageTexture	{url ["maps\langan.png"]}
+				textureTransform TextureTransform 
+				{
+					scale 45 1  
+				}
+			}
+
+			geometry Box {size 20 800 10000 }
+		}
+		
+	]
+}
+Transform {
+	translation	9980 0 0
+	children USE langan
+}
+Transform {
+	translation	0 0 -9980
+	rotation 0 1 0 1.571
+	children USE langan
+}
+DEF grass Transform {
+	translation	-5500 350 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {}
+				texture ImageTexture	{url ["maps\grass-03.jpg"]}
+				textureTransform TextureTransform 
+				{
+					scale 5 1  
+				}
+			}
+
+			geometry Box {size 800 800 10000 }
+		}
+		
+	]
+}
+Transform {
+	translation	11000 0 0
+	children USE grass
+}
+Transform {
+	translation	0 0 -11000
+	scale 1 1 1.18
+	rotation 0 1 0 1.571
+	children USE grass
+}
+
+
+
+
+PROTO image[
+field SFVec3f position 0 0 0
+field SFVec3f scale 1 1 1 
+field MFString url ""
+]
+{
+Transform{
+translation	IS position
+children [
+	Billboard {
+		children [
+			Transform {
+			scale IS scale
+			children[
+				Shape {
+					appearance Appearance {
+						material Material {}
+						texture	ImageTexture {
+						url	IS url
+						}
+					}
+					geometry IndexedFaceSet	{
+						coord Coordinate {
+							point [-0.5 0 0
+								    0.5 0 0
+								    0.5 1 0
+								   -0.5 1 0
+							] 
+						}
+						coordIndex [0 1 2 3]
+					}
+				}
+			]
+		}
+		]
+	}
+]
+}
+}
+
+image {
+	position 3000 0 4000
+	scale 700 1700 1
+	url	"student01.png"
+}
+image {
+	position -4000 0 2000
+	scale 700 1700 1
+	url	"woman03.png"
+}
+image {
+	position -8000 0 2000
+	scale 700 1700 1
+	url	"student02.png"
+}
+image {
+	position 1000 0 0
+	scale 700 1700 1
+	url	"woman04.png"
+}
+image {
+position -10000 0 -5000
+scale 5000 6000 1
+url	"tree101.png"
+}
+image {			 
+position 10000 0 -5000
+scale 5000 6000 1 
+url	"tree101.png"
+}
+image {
+position -10000 0 5000
+scale 5000 6000 1
+url	"tree101.png"
+}
+image {			 
+position 10000 0 5000
+scale 5000 6000 1 
+url	"tree101.png"
+}
+image {
+position -10000 0 0
+scale 5000 6000 1
+url	"tree1130.png"
+}
+image {
+position 10000 0 0
+scale 5000 6000 1 
+url	"tree1130.png"
+}
+image {
+position -10000 0 10000
+scale 5000 6000 1
+url	"tree1130.png"
+}
+image {
+position 10000 0 10000
+scale 5000 6000 1 
+url	"tree1130.png"
+}
+
+
+PROTO desk[
+field SFVec3f position 0 0 0
+field SFVec3f scale 1 1 1 
+field MFString url ""
+]
+{
+Transform {
+	translation	IS position
+	scale IS scale
+	children[
+	Transform
+	{
+		children
+		[
+			Transform
+			{
+				translation	0 0 0
+				children
+				[
+					Shape
+					{
+						appearance	Appearance {
+							texture ImageTexture {url IS url}}
+			        	geometry Cylinder
+					   {	
+							radius 80
+		               		height 5
+		                	side TRUE 
+			        		bottom TRUE
+			        		top	TRUE 
+						} 					
+					}
+				]
+			}
+			Transform
+			{
+				translation	-50 -42.5 -50
+				children
+				[					
+					DEF zhuotui Shape
+					{
+						appearance	DEF zhuituia Appearance {texture ImageTexture {url ["maps\desk1.jpg"]}}
+			        	geometry Cylinder
+					   {	
+							radius 5
+		               		height 80
+		                	side TRUE 
+			        		bottom TRUE
+			        		top	TRUE 
+						} 					
+					}
+				]
+			}
+			Transform
+			{
+				translation	-50 -42.5 50
+				children USE zhuotui
+			}
+			Transform
+			{
+				translation	50 -42.5 -50
+				children USE zhuotui
+			}
+			Transform
+			{
+				translation	50 -42.5 50
+				children USE zhuotui
+			}
+			Transform
+			{
+			  
+				translation	0 -7.5 0
+				rotation 0 1.0 0 0.785
+				children 
+				[Transform 
+					{
+						rotation 0 0 1.0 1.571
+						children 
+						[
+							DEF hengan Shape
+							{
+								appearance	USE	zhuituia
+			        			geometry Cylinder
+							   {	
+									radius 5
+		               				height 141
+		                			side TRUE 
+			        				bottom TRUE
+			        				top	TRUE 
+								} 					
+							}
+						]
+					}
+				]
+			}
+			Transform
+			{
+			  
+				translation	0 -7.5 0
+				rotation 0 1.0 0 -0.785
+				children 
+				[
+					Transform 
+					{
+						rotation 0 0 1.0 1.571
+						children USE hengan
+					}
+				]
+			}
+
+
+		]
+	}
+	DEF chair Transform
+	{	
+		translation	 -50 132 0
+		rotation 0 1 0 0
+		scale 25 30 25
+		children 
+		[
+			Transform
+			{
+				translation	 2 -5.8 3.75
+				children 
+				[
+					Shape
+					{
+						appearance	Appearance {texture ImageTexture {url ["maps\table.jpg"]}}
+						geometry Box {	size 1.86 0.08 1.9}
+					}
+
+				]
+			}
+			Transform
+			{
+				translation	 1.25 -6.49 4.65 
+				children 
+				[
+					DEF yitui1 Shape
+					{
+						appearance	DEF yitui Appearance {texture ImageTexture {url ["maps\chair1.jpg"]}}
+						geometry Cylinder 
+						{
+							radius 0.05
+		                	height 1.4
+		                	side TRUE 
+			        		bottom TRUE
+			        		top	TRUE 	
+						}
+					}
+
+				]
+			}
+			Transform
+			{
+				translation	 2.75 -6.49 4.65 
+				children USE yitui1
+			}
+			Transform
+			{
+				translation	 2.75 -6.49 2.9 
+				children USE yitui1
+			}
+			Transform
+			{
+				translation	 1.25 -6.49 2.9 
+				children USE yitui1
+			}
+			Transform
+			{
+				rotation     0 0 1.0 1.571
+				translation	 2 -6.15 4.65 
+				children 
+				[
+					DEF yitui2 Shape
+					{
+						appearance  USE yitui1
+						geometry Cylinder 
+						{
+							radius 0.05
+		                	height 1.5
+		                	side TRUE 
+			        		bottom TRUE
+			        		top	TRUE 	
+						}
+					}
+
+				]
+			}
+			Transform
+			{
+				rotation     0 0 1.0 1.571
+				translation	 2 -6.15 2.9 
+				children  USE  yitui2
+			}
+			Transform
+			{
+				translation	 1.25 -5.25 4.65 
+				children 
+				[
+					DEF yitui3 Shape
+					{
+						appearance  USE yitui1
+						geometry Cylinder 
+						{
+							radius 0.05
+		                	height 1.5
+		                	side TRUE 
+			        		bottom TRUE
+			        		top	TRUE 	
+						}
+					}
+
+				]
+			}
+			Transform
+			{
+				translation	 2.75 -5.25 4.65 
+				children USE yitui3
+			}
+			Transform
+			{
+				rotation     0 0 1.0 1.571
+				translation	 2 -4.6 4.65 
+				children  USE  yitui2
+			}
+			Transform
+			{							   
+				translation	 2 -4.6 4.55 
+				children
+				[
+					Shape
+					{
+						appearance	Appearance {texture ImageTexture {url ["maps\table.jpg"]}}
+						geometry Box {size 1.7 0.8 0.1}
+
+					}
+				]
+
+			}
+	
+
+		]
+
+
+	}
+	Transform {
+		translation	0 0 0
+		rotation 0 1 0 3.14
+		children USE chair
+	}
+]
+}
+}
+DEF zhuozi Transform {
+	translation	900 0 1000
+	children [
+		desk {
+			position -3500 800 -3000
+			scale 10 10 10
+			url	"maps\table.jpg"
+		}
+		desk {
+			position -1000 800 -3000
+			scale 10 10 10
+			url	"maps\table.jpg"
+		}
+		desk {
+			position 1500 800 -3000
+			scale 10 10 10
+			url	"maps\table.jpg"
+		}
+	]
+}
+Transform {
+	translation	0 0 4000
+	children USE zhuozi
+}
+
+
+
+
+
+
+
+
+
+
+
+

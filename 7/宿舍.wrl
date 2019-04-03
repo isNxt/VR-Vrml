@@ -1,0 +1,1033 @@
+#VRML V2.0 utf8
+Viewpoint {position 0 0 60}
+Background	 {skyColor [0.5 0.5 0.5]}
+
+DEF dormitory Transform {
+	children [
+#һ
+#
+Transform {
+	children [
+		DEF chuangban Transform
+		{
+			translation	0.1 0.1 0
+			children 
+			[
+				Shape 
+				{
+					appearance	Appearance {material Material {diffuseColor 1.0 0.89 0.25}
+						texture ImageTexture {
+							url ["maps\bed.jpg"]}}
+					geometry Box {	size 10.5 0.2 4.7 }
+				}
+			]
+		}
+	]
+}
+#¹
+DEF	yigui Transform
+{
+
+	children 
+	[
+		Transform
+		{
+			scale 1 0.9 0.82
+		    translation	-3.63 -4.295 -0.322	
+			children
+			[
+				Transform
+				{
+		    		translation	0 0 2.15	
+					children
+					[
+						DEF yigui1 Shape
+						{
+							appearance	DEF muban Appearance {texture ImageTexture {url ["maps\table.jpg"]}}
+							geometry Box {	size 2.515 9.5 0.04}					
+						}
+					]
+				}
+				Transform
+				{
+					translation 0 0 -2.15
+					children [USE	yigui1 Shape{}]
+				}
+				
+
+			]
+		}
+		Transform	
+		{
+			scale 1 0.9 0.82
+			translation	-4.9 -4.365 -0.322
+			children 
+			[
+				Transform
+				{
+					children 
+					[
+						DEF yigui2 Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 0.05 9.7 4.3}	
+						}
+					]
+				}
+				Transform
+				{
+					translation	2.55 0 0
+					children USE yigui2
+				}
+
+			]
+		}
+		Transform	
+		{
+			scale 1 1 0.82
+			translation	-3.65 0 -0.322
+			children 
+			[
+				Transform
+				{
+					translation	0 -0.105 0
+					children 
+					[
+						DEF yigui3 Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 2.5 0.2 4.3}	
+						}
+					]
+				}
+				Transform
+				{
+					translation	0 -8.4 0
+					children  USE	yigui3  
+
+				}
+			]
+		}
+
+	]
+
+}
+
+#
+Transform
+{	
+	scale	0.9 1 1						
+	translation	 -2.35 -0.025 -2.25
+	children
+	[
+		#shuigui1
+		DEF shugui1 Transform {
+			children [
+				Transform
+				{
+					translation	 2.85 -1.5 1.2
+					children 
+					[
+						DEF shugui1s Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 5.7 0.12 1.8 }
+						}
+						
+
+					]
+
+
+				}
+				Transform
+				{
+					translation	 2.85 -3 1.2
+					children USE	shugui1s	
+
+				}
+				Transform
+				{
+					translation	 2.9 -1.53 0.25
+					children 
+					[
+						Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 5.8 3.06 0.09 }
+						}
+					]
+				}
+			]
+		}
+		
+		Transform
+		{
+			translation	 5.7 -1.53 1.20
+			children 
+			[
+				Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 0.07 3.06 1.9 }
+				}
+			]
+		}
+		#shugui2
+
+		DEF shugui2 Transform {
+			children [
+				Transform
+				{
+					translation	 5.8 -2.6 1.20
+					children 
+					[
+						Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 0.07 5.2 1.9 }
+						}
+					]
+				}
+				Transform
+				{
+					translation	 6.8 -2.6 0.25
+					children 
+					[
+						Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 2 5.2 0.09 }
+						}
+					]
+				}
+				Transform
+				{
+					translation	 7.775 -2.6 1.20
+					children 
+					[
+						Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 0.07 5.2 1.9 }
+						}
+					]
+				}
+				Transform
+				{
+					translation	 6.82 -1.73 1.2
+					children 
+					[
+						DEF shugui2s Shape
+						{
+							appearance	USE	muban
+							geometry Box {	size 1.98 0.12 1.8 }
+						}
+					]
+				}
+				Transform
+				{
+					translation	 6.82 -3.46 1.2
+					children 
+						USE shugui2s 
+				}
+			]
+		}
+
+		#zhuozi
+		DEF zhuozi Transform
+		{
+			translation	 3.9 -5.2 1.95
+			children 
+			[
+				Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 7.8 0.09 3.52 }
+				}
+
+			]
+		}	
+	]
+}
+
+#
+DEF chouti Transform
+{	
+	scale	0.9 1 1						
+	translation	 -2.35 -0.025 -2.25
+	children
+	[
+		Transform
+		{
+			translation	 0.8 -5.55 3.5
+			children 
+			[
+				DEF chouti1 Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 1.6 0.7 0.06}
+				}
+
+			]
+		}
+		Transform
+		{
+			translation	 0.8 -5.55 0.4
+			children 
+			[
+				USE	chouti1	Shape{}
+			]
+		}
+		Transform
+		{
+			translation	 0.025 -5.56 1.95
+			children 
+			[
+				DEF chouti2 Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 0.05 0.68 3.1}
+				}
+
+			]
+		}
+		Transform
+		{
+			translation	 1.575 -5.56 1.95
+			children 
+			[
+				USE	chouti2	Shape{}
+
+			]
+		}
+		Transform
+		{
+			translation	 0.8 -5.86 1.95
+			children 
+			[
+				Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 1.6 0.08 3.1}
+				}
+
+			]
+		}
+
+
+	]
+
+}
+#
+DEF chugui Transform
+{
+	scale 0.9 0.4 1
+	translation	6.7 -5.2 0
+	children 
+	[
+		USE	yigui
+	]
+
+}
+#̹
+DEF jianpan Transform
+{
+	scale 0.9 1 1 
+	translation	 -2.35 -0.025 -2.25
+	children 
+	[
+		Transform
+		{
+			translation	 3.37 -5.7 3.5
+			children 
+			[
+				Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 3.45 0.4 0.1}
+				}
+
+			]
+		}
+		Transform
+		{
+			translation	 3.37 -5.8 1.95
+			children 
+			[
+				Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 3.45 0.2 3.1}
+				}
+
+			]
+		}
+		
+	]
+
+}
+#֧ܺ
+DEF zhijia1 Transform
+{
+	
+	children
+	[	#֧
+		Transform
+		{				
+			translation	5.4 -3.37 2.44 
+			children
+			[
+				DEF	zhijia Shape
+				{
+					appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+			        geometry Cylinder 
+					{	
+						radius 0.075
+		                height 10.5
+		                side TRUE 
+			        	bottom TRUE
+			        	top	TRUE 
+					}
+
+				}
+			]
+
+		}
+		Transform
+		{
+			translation	-5.28 -3.37 2.44 
+			children USE zhijia
+		}
+		Transform
+		{
+			translation	5.4 -3.37 -2.44 
+			children USE zhijia
+		}
+		Transform
+		{
+			translation	-5.28 -3.37 -2.44 
+			children USE zhijia
+		}
+		#
+		Transform
+		{
+			rotation 1.0 0 0 1.571
+			translation	5.4 0.1 0 
+			children
+			[
+
+				DEF	langan1 Shape
+				{
+					appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+			        geometry Cylinder 
+					{	
+						radius 0.075
+		                height 4.9
+		                side TRUE 
+			        	bottom TRUE
+			        	top	TRUE 
+					}
+				}
+			]
+		}
+		Transform
+		{	
+			rotation 1.0 0 0 1.571	
+			translation	5.4 1.76 0 
+			children USE langan1
+		}
+		Transform
+		{
+			rotation 1.0 0 0 1.571
+			translation	-5.28 0.1 0 
+			children USE langan1
+			
+		}
+		Transform
+		{	
+			rotation 1.0 0 0 1.571			 
+			translation	-5.28 1.76 0 
+			children USE langan1
+		}
+		Transform
+		{
+			translation	5.4 0.89 2.35
+			children
+			[
+				DEF langan2 Transform
+				{
+					children 
+					[
+						Transform
+						{
+							translation	0 0 -0.95
+							children
+							[	
+								DEF langancol1 Shape
+								{
+									appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+			        				geometry Cylinder 
+									{	
+										radius 0.075
+		                				height 1.63
+		                				side TRUE 
+			        					bottom TRUE
+			        					top	TRUE 
+									}
+								}
+							]
+					
+						}
+						Transform
+						{
+							translation	0 0 -0.95
+							children USE langancol1
+						}
+						Transform
+						{
+							translation	0 0 -1.9
+							children USE langancol1
+						}
+						Transform
+						{
+							translation	0 0 -2.85
+							children USE langancol1
+						}
+						Transform
+						{
+							translation	0 0 -3.75
+							children USE langancol1
+						}
+					]
+				}
+				
+			]
+
+		}
+		Transform
+		{
+			translation	-5.28 0.89 2.35
+			children USE langan2
+		}
+		Transform
+		{
+			rotation 0 0 1.0 1.571
+			translation	0.1 0.1 -2.44 
+			children
+			[
+				DEF	langan3 Shape
+				{
+					appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+			        geometry Cylinder 
+					{	
+						radius 0.075
+		                height 10.62
+		                side TRUE 
+			        	bottom TRUE
+			        	top	TRUE 
+					}
+
+				}
+			]
+		}
+		Transform
+		{
+			rotation 0 0 1.0 1.571
+			translation	0.1 0.1 2.44  
+			children USE langan3
+			
+		}
+
+		
+	]
+}
+#
+DEF hulan Transform{
+		children
+		[
+			Transform
+			{
+				translation	-2.25 1.2 2.44
+				children
+				[
+					DEF	langan4 Shape
+					{
+						appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+		        		geometry Box{size 6 0.15 0.15}
+					}					]
+
+			}
+			Transform
+			{
+				translation	-5.35 0.63 2.44
+				children
+				[
+					Transform
+					{
+						translation	1.2 0 0
+							children
+							[	
+								DEF langancol2 Shape
+								{
+									appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+			        				geometry Box{size 0.15 1.0 0.12}
+								}
+							]
+					
+					}
+					Transform
+					{
+						translation	2.4 0 0
+						children USE langancol2
+					}
+						Transform
+					{
+						translation	3.6 0 0
+						children USE langancol2
+					}
+	 				Transform
+	 				{
+	 					translation	4.8 0 0
+	 					children USE langancol2
+	 				}
+	 				Transform
+	 				{
+	 					translation	6.0 0 0
+	 					children USE langancol2
+	 				}
+	 				
+	  
+	 				
+	 			]
+	 		}
+	  
+	 	]
+	}		
+#
+DEF tizi Transform
+{
+	scale 1.2 1.3 1.0
+	translation	5 -1.5 0
+	rotation 0 0 1.0 1.571
+	children 
+	[
+		Transform
+		{
+			translation	-2.25 0.1 2.44
+			children 
+			[
+				Shape
+				{
+					appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+			        geometry Box{size 7.2 0.15 0.15}
+
+				}
+			]
+
+
+		}
+		Transform
+		{
+			translation	-2.25 1.2 2.44
+			children 
+			[
+				Shape
+				{
+					appearance	Appearance {material Material {diffuseColor 0.0 0.34 0.26}}
+			        geometry Box{size 7.2 0.15 0.15}
+
+				}
+			]
+
+
+		}
+		USE hulan
+		Transform
+		{
+			translation	-5.35 0.63 2.44
+			children
+			[
+				Transform
+				{
+					translation	0 0 0
+					children USE langancol2
+				}
+			]
+		}
+	   
+
+	]
+}
+
+#ڶ
+#¹
+Transform{
+	translation	-3.95 0 0
+	children USE yigui	
+}
+#֧
+Transform{
+	translation	-11.3 0 0
+	children USE zhijia1	
+}
+#
+Transform{
+	translation	-11.3 0 0
+	children USE chuangban
+}
+#
+Transform{
+	translation	-18.15 -0.08 -0.02
+	children USE chugui
+}
+#
+Transform{
+	translation	-13.98 -0.025 -2.25
+	scale	1 1 1						 
+	children [
+		USE shugui1
+		Transform
+		{
+			translation	 0 -1.53 1.20
+			children 
+			[
+				Shape
+				{
+					appearance	USE	muban
+					geometry Box {	size 0.07 3.06 1.9 }
+				}
+			]
+		}
+	]
+}
+Transform{
+	translation	-21.08 -0.025 -2.25
+	scale	0.9 1 1						 
+	children USE shugui2
+}
+#
+Transform{
+	translation	-15.9 -0.025 -2.25
+	scale	0.9 1 1						 
+	children USE zhuozi
+}
+#
+Transform{
+	translation	-11.15 0 4.7
+	rotation 0 1 0 3.14
+	children USE hulan
+}
+#
+Transform{
+	translation	-19.5 0 0
+	children USE tizi
+}
+#
+Transform{
+	translation	-8 0 0
+	children USE chouti
+}
+Transform{
+	translation	-12.7 0 0
+	children USE jianpan
+}
+
+]
+}
+
+Transform {
+	translation	-11.5 0 15
+	rotation 0 1 0 3.14
+	children USE dormitory
+
+}
+EXTERNPROTO	chair[
+field SFVec3f position
+field SFRotation rotation
+]
+	"chair.wrl"
+chair{position  -2.05 -0.025 -2}
+chair{position  -13.35 -0.025 -2}
+chair{
+	position 2.3 -0.025 17
+	rotation 0 1 0 3.14
+}
+chair{
+	position -9.8 -0.025 17
+	rotation 0 1 0 3.14
+}
+
+#ذ
+Transform{
+	translation	-5 -8.7 7.5
+	children [
+		Shape {
+			appearance  Appearance {texture ImageTexture {url ["maps\inner-floor.jpg"]}}
+			geometry Box {size 32 0.2 20.5}
+		
+		}
+		
+	]
+}
+#ݶ
+Transform{
+	translation	-5 6.2 7.5
+	children [
+		Shape {
+			appearance  Appearance {texture ImageTexture {url ["maps\top-wall.jpg"]}}
+			geometry Box {size 32 0.2 20.5}
+		
+		}
+		
+	]
+}
+#ǽ
+DEF wall1 Transform{
+	translation	-5 -1.1 -2.7
+	children [
+		Shape {
+			appearance DEF wall Appearance{texture ImageTexture {url ["maps\inner-wall.jpg"]}}
+			geometry Box {size 32 15 0.1}
+		
+		}
+		
+	]
+}
+Transform{
+	translation	0 0 20.4
+	children USE wall1
+}
+DEF wall2 Transform{
+	translation	11 -3.6 11.75
+	children [
+		Shape {
+			appearance USE wall
+			geometry Box {size 0.1 10 12}
+		
+		}
+		
+	]
+}
+Transform{
+	translation	0 0 -4.75
+	scale 1 1 0.35
+	children USE wall2
+}
+Transform{
+	translation	11 3.9 7.5
+	children [
+		Shape {
+			appearance USE wall
+			geometry Box {size 0.1 5 20.5}
+		
+		}
+		
+	]
+}
+DEF wall3 Transform{
+	translation	-21 -3.6 15
+	children [
+		Shape {
+			appearance USE wall
+			geometry Box {size 0.1 10 5.5}
+		
+		}
+		
+	]
+}
+Transform{
+	translation	0 0 -15
+	children USE wall3
+}
+Transform{
+	translation	-21 3.9 7.5
+	children [
+		Shape {
+			appearance USE wall
+			geometry Box {size 0.1 5 20.5}
+		
+		}
+		
+	]
+}
+#̨
+Transform{
+	translation	-25 -8.7 7.5
+	children [
+		Shape {
+			appearance DEF yangtai Appearance {texture ImageTexture {url ["maps\outer-floor.jpg"]}}
+			geometry Box {size 8 0.2 15}
+		
+		}
+		
+	]
+}
+DEF wall4 Transform{
+	translation	-25 -5.6 14.9
+	children [
+		Shape {
+			appearance DEF yangtaiwall Appearance {texture ImageTexture {url ["maps\outer-wall.jpg"]}}
+			geometry Box {size 8 6 0.2}
+		
+		}
+		
+	]
+}
+Transform{
+	translation	0 0 -14.8
+	children USE wall4
+}
+Transform{
+	translation	-29 -5.6 7.5
+	children [
+		Shape {
+			appearance USE yangtaiwall
+			geometry Box {size 0.2 6 15}
+		
+		}
+		
+	]
+}
+
+#
+Transform{
+	translation	 8.8 -3.6 5.75
+	children [
+		Shape {
+			appearance  Appearance {texture ImageTexture {url ["maps\door.jpg"]}}
+			geometry Box {size  4.25 10 0.1}
+		
+		}
+		
+	]
+}
+DEF	bolimen Transform {
+	translation	-23.14 -3.6 12.3
+	children [
+		Transform{
+			translation	0 0 0
+			children [
+				Shape {
+					appearance  Appearance {
+						material Material {transparency 0.8}
+						texture ImageTexture {url ["maps\glass.jpg"]}}
+					geometry Box {size  4.25 10 0.1}
+		
+				}
+		
+			]
+		}
+		DEF	menkuang Transform {
+			children [
+				DEF	 menkuang1 Transform{
+					translation	-2.05 0 -0.069
+					children [
+						Shape {
+							appearance  DEF menkuanga Appearance {texture ImageTexture {url ["maps\steel.jpg"]}}
+							geometry Box {size  0.15 10 0.05}
+						}
+					
+					]
+				}
+				Transform {
+					translation	4.12 0 0
+					children USE menkuang1
+				}
+				DEF	 menkuang2 Transform{
+					translation	0 0 -0.07
+					children [
+						Shape {
+							appearance  USE menkuanga
+							geometry Box {size  3.95 0.5 0.05}
+						}
+					
+					]
+				}
+				Transform {
+					translation	0 4.75 0
+					children USE menkuang2
+				}
+				Transform {
+					translation	0 -4.75 0
+					children USE menkuang2
+				}
+			]
+
+		}
+		Transform {
+			translation	0 0 0.14
+			children USE menkuang
+		}
+	]
+}
+Transform {
+	translation	0 0 -9.65
+	children USE bolimen
+}
+
+PROTO image[
+field SFVec3f position 0 0 0
+field SFVec3f scale 1 1 1 
+field MFString url ""
+]
+{
+Transform{
+translation	IS position
+children [
+	Billboard {
+		children [
+			Transform {
+			scale IS scale
+			children[
+				Shape {
+					appearance Appearance {
+						material Material {}
+						texture	ImageTexture {
+						url	IS url
+						}
+					}
+					geometry IndexedFaceSet	{
+						coord Coordinate {
+							point [-0.5 0 0
+								    0.5 0 0
+								    0.5 1 0
+								   -0.5 1 0
+							] 
+						}
+						coordIndex [0 1 2 3]
+					}
+				}
+			]
+		}
+		]
+	}
+]
+}
+}
+image {
+	position -9 -8.75 8
+	scale	5 8 1
+	url "maps\people.png"
+}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
