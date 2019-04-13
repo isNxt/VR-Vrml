@@ -1,2 +1,2 @@
 # VR-Vrml
-Vrml experiment for VR course
+- Vrml Experiments for VR course
