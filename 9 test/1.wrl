@@ -1,0 +1,83 @@
+#VRML V2.0 utf8
+
+
+DEF VP_Origin Viewpoint {
+	position	0 0 5
+}
+DEF Moon Transform {
+	translation 2.0 0.3 0.0
+	center -2.0 0.0 0.0
+	children Shape {
+		appearance Appearance {
+			material Material { 
+				diffuseColor 1 .9 .61
+				emissiveColor .2 .18 .12
+				ambientIntensity 0
+				shininess 0
+			}
+					texture	ImageTexture {
+			url	"moon.jpg"
+			
+		}
+		
+		}
+		geometry Sphere { radius 0.2 }
+	}
+
+}
+DEF Earth Transform {
+	translation 0.0 0.0 0.0
+	children [
+		Shape {
+    		appearance	Appearance {
+				material	Material {
+					diffuseColor 0 .66 .81
+					emissiveColor 0 .06 .08
+					ambientIntensity 0
+					shininess 0
+    			}
+						texture	ImageTexture {
+			url	"earth.jpg"
+			
+		}
+    		}
+    		geometry	Sphere { radius 0.5 }
+		}     ]
+}
+
+DEF TIME_Moon TimeSensor {
+	cycleInterval 2
+	startTime	0
+	stopTime	-1
+	loop TRUE
+}
+DEF TIME_Earth TimeSensor {
+	cycleInterval	45
+	startTime	0
+	stopTime	-1
+	loop		TRUE
+}
+
+DEF OI_Earth OrientationInterpolator {
+	key 		[  0.0, 0.50, 1.0 ]
+	keyValue [ 0 1 0 0.0
+		0 1 0 3.14,
+		0 1 0 6.28
+	]
+}
+
+DEF OI_Moon OrientationInterpolator {
+	key [ 0.0, 0.50, 1.0 ]
+	keyValue [ 0 1 0 0.0
+		0 1 0 3.14,
+		0 1 0 6.28
+	]
+		keyValue	 [ -0.2 1 0 0.0
+		-0.2 1 0 3.14,
+		-0.2 1 0 6.28
+	]
+},
+ROUTE TIME_Earth.fraction_changed TO OI_Earth.set_fraction
+ROUTE OI_Earth.value_changed TO Earth.rotation
+ROUTE TIME_Moon.fraction_changed TO OI_Moon.set_fraction
+ROUTE OI_Moon.value_changed TO Moon.rotation

@@ -1,0 +1,185 @@
+#VRML V2.0 utf8
+DEF VP_Origin Viewpoint {
+	position	0 -500 3000
+}
+		DEF  Clock TimeSensor {
+			cycleInterval 3
+			loop TRUE
+		}
+Group{
+	children[
+		DEF  Sphere_Parabola  Transform{
+			children[
+				Shape{
+					appearance  Appearance{
+						material  Material{
+							diffuseColor  1 .34 .34
+							emissiveColor .2 .06 .08
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+					geometry Sphere{
+						radius 35.0
+					}
+				}
+			]
+		}
+
+		DEF  Path_Parabola  PositionInterpolator {
+			key[
+				0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0	    
+			]
+			keyValue [
+				-2000 0 0,
+				-1800 -25 0,
+				-1600 -100 0,
+				-1400 -225 0,
+				-1200 -400 0,
+				-1000 -625 0,
+				-800 -900 0,
+				-600 -1225 0,
+				-400 -1600 0,
+				-200 -2025 0,
+			]
+
+		}
+	]
+}
+
+Group{
+	children[
+		DEF  Sphere_Freefall  Transform{
+			children[
+				Shape{
+					appearance  Appearance{
+						material  Material{
+							diffuseColor  1 .8 0
+							emissiveColor .28 .22 0
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+					geometry Sphere{
+						radius 35
+					}
+				}
+			]
+		}
+
+		DEF  Path_Freefall  PositionInterpolator {
+			key[
+				0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0	    
+			]
+			keyValue [
+				0 0 0,
+				0 -25 0,
+				0 -100 0,
+				0 -225 0,
+				0 -400 0,
+				0 -625 0,
+				0 -900 0,
+				0 -1225 0,
+				0 -1600 0,
+				0 -2025 0,
+			]
+		}
+	]
+}
+
+Group{
+	children[
+		DEF  Sphere_Sin  Transform{
+			children[
+				Shape{
+					appearance  Appearance{
+						material  Material{
+							diffuseColor  0 1 1
+							emissiveColor 0 .1 .1
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+					geometry Sphere{
+						radius 35
+					}
+				}
+			]
+		}
+
+		DEF  Path_Sin  PositionInterpolator {
+			key[
+				0.025 0.05 0.075 0.1 
+				0.125 0.15 0.175 0.2 
+				0.215 0.25 0.275 0.3
+			    0.325 0.35 0.375 0.4
+			    0.425 0.45 0.475 0.5
+			    0.525 0.55 0.575 0.6 
+				0.625 0.65 0.675 0.7 
+				0.725 0.75 0.775 0.8
+			    0.825 0.85 0.875 0.9 
+				0.925 0.95 0.975 1.0	    
+			]
+			keyValue [
+				1000.00 300 0,
+				1052.25 250 0,
+				1146.95 200 0,
+				1202.25 150 0,
+				1250.00 100 0,
+
+				1202.25 50 0,
+				1146.95 0 0,
+				1052.25 -50 0,
+				1000.00 -100 0,
+				0947.75 -150 0,		
+				
+				0853.05 -200 0,
+				0797.75 -250 0,
+				0750.00 -300 0,
+				0797.75 -350 0,
+				0853.05 -400 0,
+							
+				0947.75 -450 0,
+				1000.00 -500 0,
+				1052.25 -550 0,
+				1146.95 -600 0,
+				1202.25 -650 0,
+				
+				1250.00 -700 0,
+				1202.25 -750 0,
+				1146.95 -800 0,
+				1052.25 -850 0,
+				1000.00 -900 0,
+
+				0947.75 -950 0,					
+				0853.05 -1100 0,
+				0797.75 -1150 0,
+				0750.00 -1200 0,
+				0797.75 -1250 0,
+
+				0853.05 -1300 0,							
+				0947.75 -1350 0,
+				1000.00 -1400 0,
+				1052.25 -1450 0,
+				1146.95 -1500 0,
+
+				1202.25 -1550 0,			
+				1250.00 -1600 0,
+				1202.25 -1650 0,
+				1146.95 -1700 0,
+				1052.25 -1750 0,
+
+				
+			]
+		}
+	]
+}
+ROUTE  Clock.fraction_changed  TO  Path_Parabola.set_fraction
+ROUTE Path_Parabola.value_changed  TO  Sphere_Parabola.set_translation
+
+
+ROUTE  Clock.fraction_changed  TO  Path_Freefall.set_fraction
+ROUTE Path_Freefall.value_changed  TO  Sphere_Freefall.set_translation
+
+ROUTE  Clock.fraction_changed  TO  Path_Sin.set_fraction
+ROUTE Path_Sin.value_changed  TO  Sphere_Sin.set_translation
