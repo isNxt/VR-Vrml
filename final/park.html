@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>无标题文档</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="my.css">
+
+</head>
+<script language="javascript">
+
+    function hiddenMap() //隐藏显示地图
+    {
+        document.getElementById("bsContact").setNodeEventIn("mapCon", "isOpened", "true");
+        document.getElementById("debugWindow").value = '开关地图,可用快捷键M控制';
+    }
+
+    function hiddenAvatar() //隐藏显示十字准星
+    {
+        document.getElementById("bsContact").setNodeEventIn("mapCon", "isOpenedAvatar", "true");
+        document.getElementById("debugWindow").value = '开关十字准星';
+    }
+
+    function setNavigation(v) {
+        document.getElementById("bsContact").setNodeEventIn('navigationCon', 'eventStr', v);
+        document.getElementById("debugWindow").value = '灯光调整：' + v;
+    }
+
+    function change_view(viewpointID) {
+        document.getElementById("bsContact").setNodeEventIn(viewpointID, 'set_bind', 'true');
+        document.getElementById("debugWindow").value = '当前视点:' + viewpointID;
+    }
+
+    function setWalk(navigationType) {
+        document.getElementById("bsContact").setNodeEventIn("userNavigation", 'type', navigationType);
+        document.getElementById("debugWindow").value = '导航模式:' + navigationType;
+    }
+
+    function getInformation() {
+        info = document.getElementById("bsContact").getNodeEventOut("man", 'pos');
+        document.getElementById("debugWindow").value = "人物对象位置：" + info;
+    }
+</script>
+<script for="bsContact" event="OnEvent(type,infoList)" language="Javascript1.2">
+    document.getElementById("debugWindow").value = type + infoList;
+</script>
+
+<body background="back.jpg">
+
+<table border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#FF9EBE">
+    <tr>
+        <td width="140" class="STYLE1">
+            <div align="center">Menu</div>
+        </td>
+        <td width="640" height="40">
+            <div align="center" class="STYLE1">AmusePark Team</div>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="top">
+            <table width="140" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <table width="140" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <!--<td class="Tab50"><a href="#" class="white" onclick="change_view('FrontGate')" >视点01</a></td>-->
+                                <td class="Tab50"><a href="#" class="white" onclick="change_view('OpenGate')">开门</a>
+                                </td>
+                            <tr>
+                                <td class="Tab40"><a href="#" class="white"
+                                                     onclick="change_view('MerryGoRound')">旋转木马</a></td>
+
+                            </tr>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="140" border="0" cellspacing="0" cellpadding="0">
+
+                            <tr>
+                                <td class="Tab50"><a href="#" class="white" onclick="change_view('KidZoneCam')">儿童区</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="Tab50"><a href="#" class="white"
+                                                     onclick="change_view('FerrisWheelCam')">摩天轮</a></td>
+                            </tr>
+                            <tr>
+                                <td class="Tab40"><a href="#" class="white"
+                                                     onclick="change_view('ThirdPersonCam')">过山车</a></td>
+                            </tr>
+                            <tr>
+                                <td class="Tab50"><a href="#" class="white"
+                                                     onclick="change_view('FollowCamera')">摩天轮</a></td>
+
+                            </tr>
+                            <tr>
+                                <td class="Tab40"><a href="#" class="white"
+                                                     onclick="change_view('FerrisWheel2')">过山车</a></td>
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="Title140">游玩</td>
+                </tr>
+
+                <tr>
+                    <td class="Tab140"><a href="#" class="white" onclick="change_view('autoViewpoint')">交互</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="140" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="Tab70"><a href="#" class="white" onclick="setWalk('FollowCamera')">坐过山车</a>
+                                </td>
+                                <td class="Tab70"><a href="#" class="white" onclick="setWalk('FerrisWheel2')">坐摩天轮</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+
+            </table>
+
+        </td>
+        <td height="480" width="640">
+            <OBJECT CLASSID="CLSID:4B6E3013-6E45-11D0-9309-0020AFE05CC8" ID=bsContact WIDTH=100% HEIGHT=100%
+                    codeBase=BS_Contact_VRML.cab#Version=6,1,0,2>
+
+                <PARAM NAME="SRC" VALUE="park.wrl">
+
+                <!-- <EMBED name=bsContact SRC="url" TYPE="application/x-cc3d" quality=high WIDTH=640 HEIGHT=480 pluginspage='http://www.bitmanagement.de/download/BS_Contact_VRML/'>-->
+
+                <PARAM NAME="quality" VALUE="high">
+
+                <PARAM NAME="Renderer" VALUE="OpenGL">
+            </OBJECT>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td height="40">
+            <div align="center">《VRML Amusement Park》</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

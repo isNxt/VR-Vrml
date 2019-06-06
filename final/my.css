@@ -1,0 +1,157 @@
+
+.btn {
+    margin-bottom:10%;
+    padding: 8%;
+    border-radius:50px;
+    font-weight: bold;
+    border-color: transparent;
+    color: white;
+}
+
+.btn:hover{
+    color: white;
+
+}
+.thumbnail{
+    border-radius:0px;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 100%;
+    background-color: #ECF0F1;
+    border-color: #ECF0F1;
+    border-bottom: 5px solid #BDC3C7;
+    text-shadow: 0px -2px #BDC3C7;
+    color: #7f8c8d;
+
+}
+
+.round-label {
+    margin-top:20px;
+    border-radius:10px;
+    padding: 2%;
+    background-color: orange;
+}
+
+.glyphicon{
+    margin-right: 1%;
+}
+
+
+.white{
+    background-color: #ECF0F1;
+    border-bottom: 5px solid #BDC3C7;
+    text-shadow: 0px -2px #BDC3C7;
+    color: #7f8c8d;
+}
+
+.black{
+    background-color: #34495e;
+    border-bottom: 5px solid #2c3e50;
+    text-shadow: 0px -2px #2c3e50;
+}
+
+.red
+{
+    background-color: #E74C3C;
+    border-bottom: 5px solid #BD3E31;
+    text-shadow: 0px -2px #BD3E31;
+}
+
+.red:hover {
+    color: white;
+    background-color: #BD3E31}
+
+.red:active {
+    background-color: #BD3E31;
+    transform: translateY(4px);
+}
+
+.orange
+{
+    background-color: #f39c12;
+    border-bottom: 5px solid #e67e22;
+    text-shadow: 0px -2px #e67e22;
+}
+
+.orange:hover {
+    color: white;
+    background-color: #e67e22}
+
+.orange:active {
+    background-color: #e67e22;
+    transform: translateY(4px);
+}
+.yellow
+{
+    background-color: #fdce10;
+    border-bottom: 5px solid #D1B358;
+    text-shadow: 0px -2px #D1B358;
+}
+.yellow:hover {
+    color: white;
+    background-color: #D1B358}
+
+.yellow:active {
+    background-color: #D1B358;
+    transform: translateY(4px);
+}
+.green
+{
+    background-color: #82BF56;
+    border-bottom: 5px solid #669644;
+    text-shadow: 0px -2px #669644;
+}
+
+.green:hover {
+    color: white;
+    background-color: #669644}
+
+.green:active {
+
+    background-color: #669644;
+    transform: translateY(4px);
+}
+.tea
+{
+    background-color: #1abc9c;
+    border-bottom: 5px solid #16a085;
+    text-shadow: 0px -2px #16a085;
+}
+.tea:hover {
+    color: white;
+    background-color: #16a085}
+
+.tea:active {
+    background-color: #16a085;
+    border-bottom: 5px solid #138770;
+    transform: translateY(4px);
+}
+.blue
+{
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
+}
+.blue:hover {
+    color: white;
+    background-color: #2980B9}
+
+.blue:active {
+    background-color: #2980B9;
+    transform: translateY(4px);
+}
+.purple
+{
+    background-color: #9b59b6;
+    border-bottom: 5px solid #8e44ad;
+    text-shadow: 0px -2px #8e44ad;
+}
+
+.purple:hover {background-color: #8e44ad;
+color: white
+}
+
+.purple:active {
+    background-color: #8e44ad;
+    transform: translateY(4px);
+}
